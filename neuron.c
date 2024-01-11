@@ -56,3 +56,5 @@ int main(int argv, const char *argc[]) {
   }
   return 0;
 }
+
+//TODO: checkout pico-examples/pico_w/wifi/wifi_scan/picow_wifi_scan.c

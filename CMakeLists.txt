@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 include(pico_sdk_import.cmake)
-project(pico_bug C CXX ASM)
+project(pico_neuron C CXX ASM)
 
 set(PICO_BOARD pico_w)
 set(CMAKE_C STANDARD 11)
@@ -20,24 +20,24 @@ add_compile_options(
   -g
 )
 
-add_executable(bug bug.c)
+add_executable(neuron neuron.c)
 
-pico_enable_stdio_usb(bug 1) # Enable USB output
-pico_enable_stdio_uart(bug 0) # Disable UART output
-pico_add_extra_outputs(bug) # Generate map/bin/hex/uf2
+pico_enable_stdio_usb(neuron 0) # Disable USB output
+pico_enable_stdio_uart(neuron 0) # Disable UART output
+pico_add_extra_outputs(neuron) # Generate map/bin/hex/uf2
 
-target_include_directories(bug
+target_include_directories(neuron
   PRIVATE ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
-target_link_libraries(bug
+target_link_libraries(neuron
   hardware_adc
   pico_cyw43_arch_lwip_threadsafe_background
   pico_multicore
   pico_stdlib
 )
 
-target_link_options(bug
+target_link_options(neuron
     PRIVATE "LINKER:--print-memory-usage"
     #PRIVATE "LINKER:--verbose"
 )
