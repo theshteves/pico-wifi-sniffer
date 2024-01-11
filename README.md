@@ -31,4 +31,22 @@ make
 
 > Don't forget `make clean` between failed attempts.
 
-4.  ...
+4. Cry over build or linker errors at 99% that are almost definitely your fault. Reconsider many life choices. Find the missing semicolon. Get the missing header into the right folder. Rinse & repeat. Return to Step 1.
+
+> **Don't forget to triple-check that your local Pico SDK hasn't fallen out-of-sync with upstream changes, ESPECIALLY the sneaky submodules hidden under `pico-sdk/lib/` that are maintained by independent groups!** Like any great project (especially new ones), there's consant bugfixing & subtle compatibility issues that are always being tweaked for better & sometimes worse.
+
+5. 🎉 Show Time! Connect your Raspberry Pi Pico W to your computer & "flash" your program onto its tiny chip.
+
+```shell
+cp neuron.uf2 <path-to-USB-folder>
+```
+
+5. Watch stdout from terminal with [GNU Screen](). This step is the most OS-specific/sensitive:
+
+```shell
+screen /dev/<device-name> 115200
+```
+
+> For Linux/MacOS , if you're not perfectly comfortable with the complete linux device model like everyone else, you can carefully study the difference between `ls /dev` run _before AND after_ you connect your device. It might be /dev/ttyUSB123 or something similar. Not only will this name be OS-specific, but it will also be very "physical connection"-specific ...by design.
+
+I've tried to eliminate this "magic number" of `115200` from this workflow, but it's critical to commnuicate with the Pico W. This number synchronizes with the Pico's [baud rate](). Aren't you glad I started documenting this? You're welcome.
