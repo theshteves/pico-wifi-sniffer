@@ -22,7 +22,7 @@ add_compile_options(
 
 add_executable(neuron neuron.c)
 
-pico_enable_stdio_usb(neuron 0) # Disable USB output
+pico_enable_stdio_usb(neuron 1) # Enable USB output
 pico_enable_stdio_uart(neuron 0) # Disable UART output
 pico_add_extra_outputs(neuron) # Generate map/bin/hex/uf2
 
