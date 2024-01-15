@@ -2,6 +2,17 @@
 
 Spiking neuron for distributed networks of Raspberry Pi Pico W's 
 
+
+### Requirements
+
+MacOS (Homebrew):
+
+* `gcc`
+* `gcc-arm-embedded`
+* `arm-none-eabi-gcc`
+* [Raspberry Pi Pico C SDK](https://www.raspberrypi.com/documentation/pico-sdk/index_doxygen.html)
+
+
 ## Getting Started
 
 * TODO: guide on installing Pico SDK & setup
