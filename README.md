@@ -1,6 +1,6 @@
-# pico-neuron
+# pico-wifi-sniffer
 
-Spiking neuron for distributed networks of Raspberry Pi Pico W's 
+Visual sniffer for spatial source of Wi-Fi networks nearby 
 
 
 ### Requirements
